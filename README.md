@@ -1,1 +1,1 @@
-Gestion Hoteliere
+Management Hôtelier
