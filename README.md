@@ -1,5 +1,5 @@
 Management Hôtelier
 
 
-[Economat Doc](GestionStockEconomat/README.md)
+[Gestion Economat Doc](GestionStockEconomat/README.md)
 
