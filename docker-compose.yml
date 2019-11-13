@@ -1,0 +1,27 @@
+version: '3'
+services:
+  eurekaservice:
+    build: ServiceRegistry
+    container_name: eureka-server
+    ports:
+      - "8761:8761"
+  clientservice:
+    build: GestionClient
+    container_name: client-server
+    ports:
+      - "8081:8081"
+  personnelservice:
+    build: GestionPersonnels
+    container_name: personnels-server
+    ports:
+      - "8082:8082"
+  economatservice:
+    build: GestionStockEconomat
+    container_name: economat-server
+    ports:
+      - "8889:8889"
+  gatewayservice:
+    build: Gateway
+    container_name: gateway-server
+    ports:
+      - "8888:8888"
