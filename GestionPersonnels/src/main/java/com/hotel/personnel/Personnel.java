@@ -1,7 +1,6 @@
 package com.hotel.personnel;
 
 import java.io.Serializable;
-import java.util.Date;
 
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
@@ -16,16 +15,16 @@ public class Personnel implements Serializable {
 	private int id;
 	private String nom;
 	private String prenom;
-	private Date birthDate;
+	private String birthDate;
 	private double salaire;
 	private String sexe;
-	private Date dateEmbauche;
+	private String StringEmbauche;
 	@ManyToOne
 	private Departement departement;
 	public Personnel() {
 		super();
 	}
-	public Personnel(String nom, String prenom, Date birthDate, double salaire, String sexe, Date dateEmbauche,
+	public Personnel(String nom, String prenom, String birthDate, double salaire, String sexe, String StringEmbauche,
 			Departement departement) {
 		super();
 		this.nom = nom;
@@ -33,7 +32,7 @@ public class Personnel implements Serializable {
 		this.birthDate = birthDate;
 		this.salaire = salaire;
 		this.sexe = sexe;
-		this.dateEmbauche = dateEmbauche;
+		this.StringEmbauche = StringEmbauche;
 		this.departement = departement;
 	}
 	public int getId() {
@@ -51,11 +50,11 @@ public class Personnel implements Serializable {
 	public void setPrenom(String prenom) {
 		this.prenom = prenom;
 	}
-	public Date getBirthDate() {
+	public String getBirthDate() {
 		return birthDate;
 	}
-	public void setBirthDate(Date birthDate) {
-		this.birthDate = birthDate;
+	public void setBirthDate(String birthString) {
+		this.birthDate = birthString;
 	}
 	public double getSalaire() {
 		return salaire;
@@ -69,11 +68,11 @@ public class Personnel implements Serializable {
 	public void setSexe(String sexe) {
 		this.sexe = sexe;
 	}
-	public Date getDateEmbauche() {
-		return dateEmbauche;
+	public String getDateEmbauche() {
+		return StringEmbauche;
 	}
-	public void setDateEmbauche(Date dateEmbauche) {
-		this.dateEmbauche = dateEmbauche;
+	public void setDateEmbauche(String StringEmbauche) {
+		this.StringEmbauche = StringEmbauche;
 	}
 	public Departement getDepartement() {
 		return departement;
