@@ -28,6 +28,23 @@ services:
       - "8889:8889"
     networks:
       - network-eureka
+  roomservice:
+    build: GestionRoom
+    container_name: room-server
+    ports:
+      - "8899:8899"
+    networks:
+      - network-eureka
+      
+  foodservice:
+    build: GestionFood
+    container_name: food-server
+    ports:
+      - "9001:9001"
+    networks:
+      - network-eureka
+    depends_on:
+      - eurekaservice
   gatewayservice:
     build: Gateway
     container_name: gateway-server
@@ -40,6 +57,8 @@ services:
       - clientservice:client
       - personnelservice:personnel
       - economatservice:economat
+      - roomservice:room
+      - foodservice:food
     depends_on:
       - eurekaservice
 
